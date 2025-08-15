@@ -3,6 +3,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
+import { useAnalytics } from "@/hooks/use-analytics"
+import React from "react"
 
 interface PricingCardProps {
   title: string
@@ -23,13 +25,24 @@ export const PricingCard = ({
   calendlyUrl,
   pdfUrl
 }: PricingCardProps) => {
+  const { trackButtonClick, trackCalendlyClick, trackPDFDownload, trackPricingView } = useAnalytics()
+
   const handleCalendlyClick = () => {
+    trackButtonClick(`book_call_${title.toLowerCase().replace(/\s+/g, '_')}`, 'pricing_section')
+    trackCalendlyClick('pricing_section')
     window.open(calendlyUrl, '_blank')
   }
 
   const handlePdfClick = () => {
+    trackButtonClick(`download_pdf_${title.toLowerCase().replace(/\s+/g, '_')}`, 'pricing_section')
+    trackPDFDownload('pricing_section')
     window.open(pdfUrl, '_blank')
   }
+
+  // Track when pricing card is viewed
+  React.useEffect(() => {
+    trackPricingView(title)
+  }, [title, trackPricingView])
 
   return (
     <Card

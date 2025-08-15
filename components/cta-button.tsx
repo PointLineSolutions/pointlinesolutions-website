@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { useAnalytics } from "@/hooks/use-analytics"
 
 interface CTAButtonProps {
   variant?: 'primary' | 'secondary'
@@ -9,6 +10,8 @@ interface CTAButtonProps {
   url: string
   className?: string
   size?: 'default' | 'sm' | 'lg'
+  location?: string
+  buttonName?: string
 }
 
 export const CTAButton = ({ 
@@ -16,9 +19,24 @@ export const CTAButton = ({
   children, 
   url, 
   className = "",
-  size = 'lg'
+  size = 'lg',
+  location = 'unknown',
+  buttonName = 'cta_button'
 }: CTAButtonProps) => {
+  const { trackButtonClick, trackCalendlyClick, trackPDFDownload } = useAnalytics()
+
   const handleClick = () => {
+    // Track the button click
+    trackButtonClick(buttonName, location)
+    
+    // Track specific actions based on URL
+    if (url.includes('calendly.com')) {
+      trackCalendlyClick(location)
+    } else if (url.includes('pricing-guide.pdf')) {
+      trackPDFDownload(location)
+    }
+    
+    // Open the URL
     window.open(url, '_blank')
   }
 
@@ -34,7 +52,6 @@ export const CTAButton = ({
       </Button>
     )
   }
-
   return (
     <Button
       size={size}

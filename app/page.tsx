@@ -31,6 +31,7 @@ import {
 import { CTAButton } from "@/components/cta-button"
 import { PricingCard } from "@/components/pricing-card"
 import { FloatingCTA } from "@/components/floating-cta"
+import { ScrollTracker } from "@/components/scroll-tracker"
 
 export default function HomePage() {
   return (
@@ -69,6 +70,8 @@ export default function HomePage() {
                 url="https://calendly.com/pointlinesolutions/30min"
                 size="default"
                 className="bg-red-500 hover:bg-red-600 text-white animate-scale-pulse"
+                location="header"
+                buttonName="header_book_call"
               >
                 Book Free Call
               </CTAButton>
@@ -126,12 +129,16 @@ export default function HomePage() {
               <CTAButton 
                 variant="primary"
                 url="https://calendly.com/pointlinesolutions/30min"
+                location="hero_section"
+                buttonName="hero_book_call"
               >
                 Book a Free Strategy Call
               </CTAButton>
               <CTAButton
                 variant="secondary"
                 url="/pricing-guide.pdf"
+                location="hero_section"
+                buttonName="hero_download_pdf"
               >
                 Download Pricing PDF
               </CTAButton>
@@ -787,6 +794,7 @@ export default function HomePage() {
 
       {/* Floating CTA Bubble */}
       <FloatingCTA url="https://calendly.com/pointlinesolutions/30min" />
+      <ScrollTracker />
     </div>
   )
 }

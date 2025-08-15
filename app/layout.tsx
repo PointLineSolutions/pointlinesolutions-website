@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Space_Grotesk, Inter } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -9,26 +10,59 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
 })
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-})
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PointLine Solutions - AI Consulting Agency",
-  description: "Helping businesses thrive through cutting-edge artificial intelligence solutions",
-  generator: "v0.app",
-}
+  title: "PointLine Solutions - AI-Powered Roofing & HVAC Lead Generation",
+  description: "Book 20+ Roofing or HVAC Jobs in 30 Days — or You Don't Pay. Our AI caller, chatbot, and ads engine fill your calendar automatically.",
+  keywords: "roofing leads, HVAC leads, AI caller, chatbot, lead generation, roofing marketing, HVAC marketing",
+};
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Favicon */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID', {
+                page_title: 'PointLine Solutions - AI-Powered Lead Generation',
+                page_location: window.location.href,
+                send_page_view: true
+              });
+            `,
+          }}
+        />
+      </head>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  )
+  );
 }
