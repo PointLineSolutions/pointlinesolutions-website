@@ -418,7 +418,7 @@ export default function HomePage() {
                 monthly="$2,500"
                 includes={["Ads", "Funnel", "AI caller/chatbot", "CRM", "Follow-ups"]}
                 featured={false}
-                calendlyUrl="https://cal.com/pointlinesolutions/20min"
+                bookingUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
               <PricingCard
@@ -427,7 +427,7 @@ export default function HomePage() {
                 monthly="$800"
                 includes={["AI caller", "Chatbot", "Basic follow-ups"]}
                 featured={false}
-                calendlyUrl="https://cal.com/pointlinesolutions/20min"
+                bookingUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
             </div>
@@ -440,7 +440,7 @@ export default function HomePage() {
                 monthly="$2,500"
                 includes={["Facebook/Google ads", "Landing pages", "Lead capture"]}
                 featured={false}
-                calendlyUrl="https://cal.com/pointlinesolutions/20min"
+                bookingUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
               <PricingCard
@@ -449,7 +449,7 @@ export default function HomePage() {
                 monthly="$500"
                 includes={["CRM setup", "Workflow automation", "Team training"]}
                 featured={false}
-                calendlyUrl="https://cal.com/pointlinesolutions/20min"
+                bookingUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
             </div>
@@ -462,7 +462,7 @@ export default function HomePage() {
                   monthly="$250"
                   includes={["Email sequences", "SMS follow-ups", "Lead nurturing"]}
                   featured={false}
-                  calendlyUrl="https://cal.com/pointlinesolutions/20min"
+                  bookingUrl="https://cal.com/pointlinesolutions/20min"
                   pdfUrl="/pricing-guide.pdf"
                 />
             </div>

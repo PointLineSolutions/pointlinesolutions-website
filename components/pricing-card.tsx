@@ -12,7 +12,7 @@ interface PricingCardProps {
   monthly: string
   includes: string[]
   featured?: boolean
-  calendlyUrl: string
+  bookingUrl: string
   pdfUrl: string
 }
 
@@ -22,11 +22,11 @@ export const PricingCard = ({
   monthly, 
   includes, 
   featured = false,
-  calendlyUrl,
+  bookingUrl,
   pdfUrl
 }: PricingCardProps) => {
-  const handleCalendlyClick = () => {
-    window.open(calendlyUrl, '_blank')
+  const handleBookingClick = () => {
+    window.open(bookingUrl, '_blank')
   }
 
   const handlePdfClick = () => {
@@ -70,7 +70,7 @@ export const PricingCard = ({
         <div className="space-y-3 pt-4">
           <Button 
             className="w-full bg-red-500 hover:bg-red-600 text-white animate-scale-pulse"
-            onClick={handleCalendlyClick}
+            onClick={handleBookingClick}
           >
             Book a Free Strategy Call
           </Button>
