@@ -2,20 +2,14 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { useAnalytics } from "@/hooks/use-analytics"
+
 
 interface FloatingCTAProps {
   url: string
 }
 
 export const FloatingCTA = ({ url }: FloatingCTAProps) => {
-  const { trackButtonClick, trackCalendlyClick } = useAnalytics()
-
   const handleClick = () => {
-    trackButtonClick('floating_cta', 'floating_button')
-    if (url.includes('calendly.com')) {
-      trackCalendlyClick('floating_button')
-    }
     window.open(url, '_blank')
   }
 

@@ -67,7 +67,7 @@ export default function HomePage() {
               </a>
               <CTAButton 
                 variant="primary"
-                url="https://calendly.com/pointlinesolutions/30min"
+                url="https://cal.com/pointlinesolutions/20min"
                 size="default"
                 className="bg-red-500 hover:bg-red-600 text-white animate-scale-pulse"
                 location="header"
@@ -128,7 +128,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CTAButton 
                 variant="primary"
-                url="https://calendly.com/pointlinesolutions/30min"
+                url="https://cal.com/pointlinesolutions/20min"
                 location="hero_section"
                 buttonName="hero_book_call"
               >
@@ -322,7 +322,7 @@ export default function HomePage() {
             </div>
             <CTAButton 
               variant="primary"
-              url="https://calendly.com/pointlinesolutions/30min"
+              url="https://cal.com/pointlinesolutions/20min"
               size="default"
               className="bg-red-500 hover:bg-red-600 text-white animate-scale-pulse whitespace-nowrap"
             >
@@ -418,7 +418,7 @@ export default function HomePage() {
                 monthly="$2,500"
                 includes={["Ads", "Funnel", "AI caller/chatbot", "CRM", "Follow-ups"]}
                 featured={false}
-                calendlyUrl="https://calendly.com/pointlinesolutions/30min"
+                calendlyUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
               <PricingCard
@@ -427,7 +427,7 @@ export default function HomePage() {
                 monthly="$800"
                 includes={["AI caller", "Chatbot", "Basic follow-ups"]}
                 featured={false}
-                calendlyUrl="https://calendly.com/pointlinesolutions/30min"
+                calendlyUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
             </div>
@@ -440,7 +440,7 @@ export default function HomePage() {
                 monthly="$2,500"
                 includes={["Facebook/Google ads", "Landing pages", "Lead capture"]}
                 featured={false}
-                calendlyUrl="https://calendly.com/pointlinesolutions/30min"
+                calendlyUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
               <PricingCard
@@ -449,7 +449,7 @@ export default function HomePage() {
                 monthly="$500"
                 includes={["CRM setup", "Workflow automation", "Team training"]}
                 featured={false}
-                calendlyUrl="https://calendly.com/pointlinesolutions/30min"
+                calendlyUrl="https://cal.com/pointlinesolutions/20min"
                 pdfUrl="/pricing-guide.pdf"
               />
             </div>
@@ -462,7 +462,7 @@ export default function HomePage() {
                   monthly="$250"
                   includes={["Email sequences", "SMS follow-ups", "Lead nurturing"]}
                   featured={false}
-                  calendlyUrl="https://calendly.com/pointlinesolutions/30min"
+                  calendlyUrl="https://cal.com/pointlinesolutions/20min"
                   pdfUrl="/pricing-guide.pdf"
                 />
             </div>
@@ -550,7 +550,7 @@ export default function HomePage() {
           </p>
                     <CTAButton 
             variant="primary"
-            url="https://calendly.com/pointlinesolutions/30min"
+            url="https://cal.com/pointlinesolutions/20min"
           >
             Book Your Free Strategy Call
           </CTAButton>
@@ -707,7 +707,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <CTAButton 
             variant="primary"
-            url="https://calendly.com/pointlinesolutions/30min"
+            url="https://cal.com/pointlinesolutions/20min"
           >
             Book Your Free Strategy Call
           </CTAButton>
@@ -724,7 +724,7 @@ export default function HomePage() {
             </div>
             <CTAButton 
               variant="primary"
-              url="https://calendly.com/pointlinesolutions/30min"
+              url="https://cal.com/pointlinesolutions/20min"
               size="default"
               className="bg-cyan-500 hover:bg-cyan-600 text-white animate-scale-pulse whitespace-nowrap"
             >
@@ -793,7 +793,7 @@ export default function HomePage() {
       </footer>
 
       {/* Floating CTA Bubble */}
-      <FloatingCTA url="https://calendly.com/pointlinesolutions/30min" />
+      <FloatingCTA url="https://cal.com/pointlinesolutions/20min" />
       <ScrollTracker />
     </div>
   )

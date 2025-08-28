@@ -49,8 +49,13 @@ pnpm build
 ```
 
 ### 🔗 Current Links:
-- **Calendly Booking**: https://calendly.com/pointlinesolutions/30min
+- **Cal.com Booking**: https://cal.com/pointlinesolutions/20min
 - **Pricing PDF**: /pricing-guide.pdf (relative path)
+
+### 📊 Analytics & Tracking:
+- **Google Analytics**: Removed completely
+- **Replacement**: Netlify analytics + n8n webhooks for custom tracking
+- **Benefits**: Better privacy, custom data collection, webhook integrations
 
 ### 📊 Website Features:
 - ✅ High-converting hero section
@@ -62,6 +67,7 @@ pnpm build
 - ✅ Mobile responsive
 - ✅ SEO optimized
 - ✅ Fast loading (112 kB total)
+- ✅ Analytics removed - ready for Netlify + n8n webhooks
 
 ### 🎯 Conversion Elements:
 - **Primary CTA**: "Book a Free Strategy Call"
