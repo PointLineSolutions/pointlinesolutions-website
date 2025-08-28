@@ -559,67 +559,130 @@ export default function HomePage() {
 
       <DiamondDivider />
 
-      {/* Testimonials Section - Updated colors */}
-      <section id="testimonials" className="py-20 bg-slate-800 relative overflow-hidden">
+      {/* Testimonials Section - Enhanced Design */}
+      <section id="testimonials" className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/5 to-transparent animate-gradient-shift"></div>
+        <div className="absolute top-20 left-10 w-40 h-40 bg-red-500/5 rounded-full animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-cyan-500/5 rounded-lg animate-rotate-slow"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16 animate-fade-in-up">
+            <Badge className="bg-cyan-500/10 text-cyan-400 border-cyan-500/20 animate-pulse-glow mb-4">
+              <Star className="w-4 h-4 mr-2" />
+              Client Success Stories
+            </Badge>
             <h2 className="font-heading font-bold text-5xl text-white animate-text-glow">What Our Clients Say</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Trusted by industry leaders who've experienced transformational results
+              Trusted by industry leaders who've experienced transformational results with our AI solutions
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8">
+          
+          <div className="grid lg:grid-cols-3 gap-8">
             {[
               {
                 quote:
-                  "PointLine Solutions transformed our entire approach to data analysis. Their AI implementation increased our efficiency by 300% and gave us insights we never knew were possible.",
-                author: "Sarah Chen",
-                title: "CTO, DataDriven Inc.",
-                avatar: "/placeholder.svg?height=60&width=60",
-                company: "DataDriven Inc.",
-                industry: "Technology",
+                  "PointLine Solutions transformed our roofing business completely. Their AI caller and chatbot system filled our calendar with qualified leads in just 30 days. We went from 5 jobs per month to 25+ jobs consistently.",
+                author: "David Thompson",
+                title: "Owner & CEO",
+                company: "Thompson Roofing Co.",
+                industry: "Roofing",
+                avatar: "/placeholder-user.jpg",
+                rating: 5,
+                result: "500% Increase in Leads"
               },
               {
                 quote:
-                  "The team's expertise in AI strategy is unmatched. They didn't just implement technology—they revolutionized how we think about our business processes.",
-                author: "Michael Rodriguez",
-                title: "CEO, InnovateNow Corp.",
-                avatar: "/placeholder.svg?height=60&width=60",
-                company: "InnovateNow Corp.",
-                industry: "Manufacturing",
+                  "The AI follow-up sequences they built for our HVAC company are incredible. We're closing 40% more deals because prospects get personalized follow-ups at the perfect time. Game changer!",
+                author: "Maria Rodriguez",
+                title: "Operations Director",
+                company: "CoolBreeze HVAC",
+                industry: "HVAC",
+                avatar: "/placeholder-user.jpg",
+                rating: 5,
+                result: "40% Higher Close Rate"
+              },
+              {
+                quote:
+                  "Their CRM automation saved us 20 hours per week on admin tasks. Now our team focuses on installations while the AI handles all the follow-ups and scheduling. ROI was immediate.",
+                author: "James Wilson",
+                title: "Founder",
+                company: "Wilson Contracting",
+                industry: "Construction",
+                avatar: "/placeholder-user.jpg",
+                rating: 5,
+                result: "20 Hours Saved Weekly"
               },
             ].map((testimonial, index) => (
               <Card
                 key={index}
-                className="p-8 bg-slate-900/50 border-slate-700 hover:shadow-xl transition-all duration-500 animate-fade-in-up hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-to-br from-slate-900/80 to-slate-800/80 border border-slate-700/50 hover:border-cyan-500/30 transition-all duration-500 animate-fade-in-up hover:scale-105 hover:shadow-2xl"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <CardContent className="space-y-6 p-0">
-                  <div className="flex text-cyan-500 animate-pulse-glow">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-current" />
-                    ))}
+                {/* Background glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <CardContent className="relative p-8 space-y-6">
+                  {/* Rating Stars */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex text-cyan-500 animate-pulse-glow">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-current" />
+                      ))}
+                    </div>
+                    <Badge className="bg-green-500/10 text-green-400 border-green-500/20 text-xs">
+                      {testimonial.result}
+                    </Badge>
                   </div>
-                  <blockquote className="text-lg text-slate-200 italic leading-relaxed">
-                    "{testimonial.quote}"
+                  
+                  {/* Quote */}
+                  <blockquote className="text-lg text-slate-200 italic leading-relaxed relative">
+                    <div className="absolute -top-2 -left-2 text-4xl text-cyan-500/20 font-serif">"</div>
+                    {testimonial.quote}
+                    <div className="absolute -bottom-2 -right-2 text-4xl text-cyan-500/20 font-serif">"</div>
                   </blockquote>
-                  <div className="flex items-center space-x-4">
-                    <img
-                      src={testimonial.avatar || "/placeholder.svg"}
-                      alt={testimonial.author}
-                      className="w-16 h-16 rounded-full object-cover animate-scale-pulse"
-                    />
-                    <div>
+                  
+                  {/* Author Info */}
+                  <div className="flex items-center space-x-4 pt-4 border-t border-slate-700/50">
+                    <div className="relative">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        className="w-16 h-16 rounded-full object-cover ring-2 ring-cyan-500/20 group-hover:ring-cyan-500/40 transition-all duration-300"
+                      />
+                      <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="w-4 h-4 text-white" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
                       <div className="font-semibold text-white text-lg">{testimonial.author}</div>
-                      <div className="text-slate-300">{testimonial.title}</div>
-                      <div className="text-sm text-cyan-500 font-semibold">{testimonial.industry}</div>
+                      <div className="text-slate-300 text-sm">{testimonial.title}</div>
+                      <div className="text-cyan-400 font-semibold text-sm">{testimonial.company}</div>
+                      <div className="text-xs text-slate-400 uppercase tracking-wide">{testimonial.industry}</div>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="text-center mt-16 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-8 bg-slate-900/50 border border-slate-700/50 rounded-full px-8 py-4">
+              <div className="flex items-center space-x-2 text-cyan-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-semibold">98% Client Satisfaction</span>
+              </div>
+              <div className="w-px h-6 bg-slate-600"></div>
+              <div className="flex items-center space-x-2 text-cyan-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-semibold">200+ Projects Delivered</span>
+              </div>
+              <div className="w-px h-6 bg-slate-600"></div>
+              <div className="flex items-center space-x-2 text-cyan-400">
+                <CheckCircle className="w-5 h-5" />
+                <span className="text-sm font-semibold">Results Guaranteed</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
